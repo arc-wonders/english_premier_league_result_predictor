@@ -121,7 +121,7 @@ def simulate_championship(proba, meta_df, n_sims=5000, seed=42):
     return out.sort_values('ChampProb', ascending=False).reset_index(drop=True)
 
 # Streamlit UI
-st.title("⚽ Premier League What-If Simulator")
+st.title("⚽ Premier League Predictor")
 st.markdown("""
 This app lets you simulate how changes in team performance metrics might affect their chances 
 of winning the Premier League. Select a season and adjust team strength parameters to see the impact.
