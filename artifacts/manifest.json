@@ -1,0 +1,39 @@
+{
+  "seasons": [
+    {
+      "season_start": 2021,
+      "season_tag": "2021-22",
+      "fixtures": 380,
+      "logloss": 1.0529828870370097,
+      "brier": 0.18549097934645978
+    },
+    {
+      "season_start": 2022,
+      "season_tag": "2022-23",
+      "fixtures": 380,
+      "logloss": 0.9429908396328835,
+      "brier": 0.1764491052444368
+    },
+    {
+      "season_start": 2023,
+      "season_tag": "2023-24",
+      "fixtures": 380,
+      "logloss": 0.732342864023432,
+      "brier": 0.14456456870289364
+    },
+    {
+      "season_start": 2024,
+      "season_tag": "2024-25",
+      "fixtures": 380,
+      "logloss": 0.8364963065127138,
+      "brier": 0.16620072860133758
+    },
+    {
+      "season_start": 2025,
+      "season_tag": "2025-26",
+      "fixtures": 90,
+      "logloss": 0.8088644065049813,
+      "brier": 0.16191943402359565
+    }
+  ]
+}
