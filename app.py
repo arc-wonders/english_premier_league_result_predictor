@@ -5,10 +5,30 @@ import json
 import joblib
 from pathlib import Path
 from datetime import datetime
+import requests
+import time
+import threading
+
+def ping_server():
+    """Background task to ping the server every 5 minutes to prevent sleep in free tier"""
+    while True:
+        try:
+            # Get the streamlit server URL from environment variable or use a default local URL
+            url = f"https://{st.get_option('server.address')}" if st.get_option('server.address') else "http://localhost:8501"
+            requests.get(url)
+            time.sleep(300)  # Wait for 5 minutes
+        except Exception:
+            pass  # Ignore any errors and continue pinging
+
+# Start the background health check thread
+if not st.session_state.get('health_check_started'):
+    health_check_thread = threading.Thread(target=ping_server, daemon=True)
+    health_check_thread.start()
+    st.session_state['health_check_started'] = True
 
 # Set page config
 st.set_page_config(
-    page_title="Premier League What-If Simulator",
+    page_title="Premier League Predictor",
     page_icon="⚽",
     layout="wide"
 )
