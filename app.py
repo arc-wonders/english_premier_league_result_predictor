@@ -13,8 +13,8 @@ def ping_server():
     """Background task to ping the server every 5 minutes to prevent sleep in free tier"""
     while True:
         try:
-            # Get the streamlit server URL from environment variable or use a default local URL
-            url = f"https://{st.get_option('server.address')}" if st.get_option('server.address') else "http://localhost:8501"
+            # Use the specific Streamlit app URL
+            url = "https://arc-wonders-english-premier-league-result-predictor-app-d8jlqp.streamlit.app/"
             requests.get(url)
             time.sleep(300)  # Wait for 5 minutes
         except Exception:
